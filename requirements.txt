@@ -1,2 +1,9 @@
 streamlit
 langchain
+pyodbc
+python-dotenv
+langchain-community
+openai
+snowflake-connector-python
+snowflake-snowpark-python
+psycopg2
