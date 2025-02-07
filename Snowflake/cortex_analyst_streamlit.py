@@ -3,24 +3,28 @@ from typing import Any, Dict, List, Optional
 import pandas as pd
 import requests
 import snowflake.connector
+import os
 import streamlit as st
+from dotenv import load_dotenv
 
+#loading env variables
+load_dotenv()
 
-HOST = "bkmvtdf-rga00884.snowflakecomputing.com"
-DATABASE = "RETAIL_ANALYTICS"
-SCHEMA = "PUBLIC"
-STAGE = "RETAIL_STAGE"
+HOST = os.getenv('host')
+DATABASE = os.getenv('DATABASE')
+SCHEMA = os.getenv("SCHEMA")
+STAGE = os.getenv("STAGE")
 FILE = "database_schema.yaml"
 
 if 'CONN' not in st.session_state or st.session_state.CONN is None:
     st.session_state.CONN = snowflake.connector.connect(
-        user="rajapandi",
-        password="Optisol2020",
-        account="RGA00664",
+        user=os.getenv('user'),
+        password=os.getenv('password'),
+        account=os.getenv('account'),
         host=HOST,
         port=443,
-        warehouse="CORTEX_ANALYST_WH",
-        role="ACCOUNTADMIN",
+        warehouse=os.getenv('warehouse'),
+        role=os.getenv('role'),
     )
 
 

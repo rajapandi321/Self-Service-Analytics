@@ -7,3 +7,4 @@ openai
 snowflake-connector-python
 snowflake-snowpark-python
 psycopg2
+langchain-openai

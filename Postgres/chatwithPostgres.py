@@ -30,11 +30,6 @@ host = os.getenv('p_server_name')
 db_name = os.getenv('p_db_name')
 port = os.getenv('port', '5432')  # Default PostgreSQL port is 5432
 
-LANGSMITH_TRACING='true'
-LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
-LANGSMITH_API_KEY="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"
-LANGSMITH_PROJECT="chatbot-self-service"
-
 if not username or not password or not host or not db_name:
     st.error("Missing database credentials. Please check your `.env` file.")
     st.stop()
